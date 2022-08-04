@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aa9a7d5a3114c881d26520add5b3, type: 3}
+  m_Name: SISSData
+  m_EditorClassIdentifier: 
+  objectSteps:
+    keys: []
+    values: []
+  pathSteps:
+    savedValues:
+    - classType: SpecialImportRenameFromTo
+      target:
+        guid: 
+        path: Assets/**/*.obj
+        subAssetMatchString: '*'
+        objectTypeStrings:
+        - UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      parameters:
+      - '[[FILENAME]]'
+      - True
+      - 0
+    - classType: SpecialImportRenameFromTo
+      target:
+        guid: 
+        path: Assets/**/*.obj
+        subAssetMatchString: '*'
+        objectTypeStrings:
+        - UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      parameters:
+      - '[[FILENAME]]_Mesh'
+      - True
+      - 0
+    - classType: SpecialImportUnifySuffix
+      target:
+        guid: 
+        path: Assets/**/*
+        subAssetMatchString: 
+        objectTypeStrings:
+        - UnityEngine.Texture, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      parameters:
+      - True
+      - 0
+      - True
+      - False
+  printSpecialImporterDebugLogs: 0
+  fileOrFolderWildcard: '*'
+  multipleFolderWildcard: '**'
+  drawInProjectView: 1
+  showTooltip: 1
+  iconColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  pathStepColor: {r: 1, g: 0.54509807, b: 0, a: 0.8}
+  guidStepColor: {r: 0, g: 0.6313726, b: 1, a: 0.8}
+  overlayOpacity: 0
+  suffixColor: {r: 0.8, g: 0.6627451, b: 0, a: 0.8}
+  renameRules:
+    objectNameKeyword: '[[OBJECTNAME]]'
+    fileNameKeyword: '[[FILENAME]]'
+    extensionKeyword: '[[EXTENSION]]'
+    pathKeyword: '[[PATH]]'
+    typeKeyword: '[[TYPE]]'
+    desieredSuffixSeparator: _
+    suffixSeparatorVariations:
+    - _
+    - .
+    - ' '
+    - '-'
+    suffixes:
+    - type: 1
+      desieredSuffixName: Diffuse
+      suffixVariations:
+      - D
+      - Diffuse
+      - Surface
+      - Skin
+      - Albedo
+      - AlbedoMap
+      - Color
+    - type: 2
+      desieredSuffixName: Specular
+      suffixVariations:
+      - S
+      - Specular
+      - Roughness
+      - RoughnessMap
+    - type: 3
+      desieredSuffixName: Metallic
+      suffixVariations:
+      - M
+      - Metallic
+      - Glossiness
+    - type: 4
+      desieredSuffixName: Normal
+      suffixVariations:
+      - N
+      - Normal
+      - NormalMap
+      - Bump
+      - BumpMap
+    - type: 5
+      desieredSuffixName: Height
+      suffixVariations:
+      - H
+      - Height
+      - HeightMap
+      - ParallaxMap
+      - Displacement
+    - type: 6
+      desieredSuffixName: Occlusion
+      suffixVariations:
+      - AO
+      - Occlusion
+      - O
+      - Ambient Occlusion
+    - type: 7
+      desieredSuffixName: Emission
+      suffixVariations:
+      - E
+      - Glow
+      - GlowMap
+      - Emission
+      - EmissionMap
+    - type: 0
+      desieredSuffixName: Mat
+      suffixVariations:
+      - Mat
+      - Material
+    - type: 0
+      desieredSuffixName: Anim
+      suffixVariations:
+      - Anim
+      - Animation
+    - type: 0
+      desieredSuffixName: AnimCtrl
+      suffixVariations:
+      - AnimCtrl
+      - Animation Controller
+      - AnimationController
