@@ -59,7 +59,11 @@ public class SpecialImporter : AssetPostprocessor
 
 	// ---------------============================ Postprocess ============================---------------//
 
+#if UNITY_2021_OR_NEWER
+	OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths, bool didDomainReload)
+#else
 	static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+#endif
 	{
 
 		if (SISSData.Instance.printSpecialImporterDebugLogs)
@@ -155,6 +159,7 @@ public class SpecialImporter : AssetPostprocessor
 
 		List<SpecialImportStep> steps = SISSData.Instance.GetStepsForAsset(guid.ToString(), assetPath, assetType);
 		for (int i = 0; i < steps.Count; i++)
-			steps[i].Apply(asset, context, assetImporter);
+			if (steps[i].enabled)
+				steps[i].Apply(asset, context, assetImporter);
 	}
 }
